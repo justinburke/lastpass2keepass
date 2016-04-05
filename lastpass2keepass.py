@@ -159,7 +159,8 @@ def add_entry(parent_element, entry):
     }
     for (name, text) in element_name_to_element_text.items():
         # Use decode for windows element appending errors
-        ET.SubElement(entry_element, name).text = text.decode("utf-8")
+        #ET.SubElement(entry_element, name).text = text.decode("utf-8")
+        ET.SubElement(entry_element, name).text = text.decode("latin-1")
 
 
 def write_output(output_file_path, xml_document):
